@@ -1,6 +1,7 @@
 html {
     background-color: lightpink;
     height: 100vh;
+    overflow:hidden;
     border: 10px solid white;
 }
 
@@ -11,12 +12,20 @@ body {
     overflow-x:hidden;
 }
 
-table {
-    background-color: white;
+.table td {
+    border-top: 1px solid white;
+    padding: 10px;
 }
 
 h1 {
     font-family: "Playfair Display", serif;
     font-weight: bold;
     font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p, td {
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
 }
