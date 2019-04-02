@@ -50,7 +50,7 @@
                 </tr>
             </table>
         </div>
-        <div class="col-12 col-lg-4 mx-auto" id="rightside" >
+        <div class="col-12 col-lg-4 mx-auto text-center text-lg-left" id="rightside" >
             <p id="notification">display text</p>  
         </div>
     </div>
@@ -123,14 +123,21 @@
 
 /*==================================================*/
 
+        //variable open shop
+        var openText = document.getElementById("notification").innerHTML = "Our shop is currently open"
+
         //creates the button
         var btn = document.createElement('button');
         btn.innerHTML = "Close early";
-        document.getElementById("rightside").appendChild(btn);
 
+        //if the shop is open then show the button
+        if (openText) {
+            document.getElementById("rightside").appendChild(btn);   
+        }
+        
         btn.addEventListener('click',closeEarly)
             function closeEarly(){
-            // get current date and time and display them right   
+                // get current date and time and display them right   
                 var date = new Date();
                 var day = date.getDay();   
                 var h = date.getHours(); // 0 - 23
@@ -142,10 +149,10 @@
                         session = "pm";
                     }
 
-            // set zero in front of minutes
+                // set zero in front of minutes
                 m = (m < 10) ? "0" + m : m;
 
-            // apply date and time on table
+                    // apply date and time on table
 
                     if (day == 1) { // Monday
                         document.getElementById("openinghours").rows[0].cells[1].innerHTML = "1 pm - " + h + ":" + m + " " + session;
@@ -165,6 +172,12 @@
                     if (day == 6) { // Saturday
                         document.getElementById("openinghours").rows[5].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
                     }
+
+            //change p title
+            document.getElementById("notification").innerHTML = "Our shop is exceptionally closed now";
+            
+            //remove button after early closing
+            document.getElementById("rightside").removeChild(btn);
             }
 
     </script>   
