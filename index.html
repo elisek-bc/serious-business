@@ -50,7 +50,7 @@
                 </tr>
             </table>
         </div>
-        <div class="col-12 col-lg-4 mx-auto" >
+        <div class="col-12 col-lg-4 mx-auto" id="rightside" >
           <p id="notification">display text</p>  
         </div>
     </div>
@@ -91,7 +91,21 @@
                             }
                         }
                     }
-                }           
+                }
+
+        //BONUS OBJECTIVES       
+        var btn = document.createElement('button');
+        btn.innerHTML = "Close early";
+        document.getElementById("rightside").appendChild(btn);
+
+        btn.addEventListener('click',closeEarly)
+
+        function closeEarly(){
+            
+        }
+
+                
+                           
     </script>   
 </body>
 </html>
