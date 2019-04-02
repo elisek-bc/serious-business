@@ -29,3 +29,17 @@ p, td {
     font-size: 15px;
     font-weight: 400;
 }
+
+.notification {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+    border: 1px solid lightpink;
+    outline: 3px solid white;
+    margin-top: 20px !important;
+    margin-bottom:0;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}

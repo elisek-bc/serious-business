@@ -14,8 +14,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
+    <script>
+
+    window.addEventListener('load',checkDayandTime)
+
+        function checkDayandTime(){
+            var date = new Date();
+            var day = date.getDay();
+            console.log(day); // 0=Sunday 1=Monday 2=Tuesday ...
+    
+            var hour = date.getHours(); // 0 = 12am, 1 = 1am, ... 18 = 6pm\
+            console.log(hour);
+
+            //Check if it's sunday
+            if (day == 0){
+                document.getElementByClassname("notification").innerHTML = "Our shop is currently closed";
+            }
+            //Check if it's monday
+            else {
+                if (day == 1){
+                    if (hour >= 13 && hour <18)  {
+                    document.getElementByClassname("notification").innerHTML = "Our shop is currently open";
+                    }
+                    else {
+                    document.getElementByClassname("notification").innerHTML = "Our shop is currently closed";
+                    } 
+                }
+            //When it's not sunday or monday...
+                else {
+                    if (hour >= 10 && hour <18) {
+                    document.getElementByClassname("notification").innerHTML = "Our shop is currently open";
+                    }
+                    else {
+                    document.getElementByClassname("notification").innerHTML = "Our shop is currently closed";
+                    }
+                }
+            }
+        }
+
+    </script>
     <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-lg-4 mx-auto">
             <h1>Opening hours</h1>
             <table class="table">
                 <tr>
@@ -36,11 +75,11 @@
                 </tr>
                 <tr>
                     <td>Friday</td>
-                    <td>10am - 7pm</td>
+                    <td>10am - 6pm</td>
                 </tr>
                 <tr>
                     <td>Saturday</td>
-                    <td>10am - 7pm</td>
+                    <td>10am - 6pm</td>
                 </tr>
                 <tr>
                     <td>Sunday</td>
@@ -48,10 +87,11 @@
                 </tr>
             </table>
         </div>
-        <div class="col-6">
-          <p>Our shop is currently open</p>  
+        <div class="col-12 col-lg-4 mx-auto" >
+          <p class="notification">display text</p>  
         </div>
     </div>
-    <script src="javascript.js"></script>
+
+    
 </body>
 </html>
