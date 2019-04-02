@@ -1,6 +1,6 @@
 # Serious Business Javascript Exercise
 
-You can find the project here:
+You can find the project here: https://elisek-bc.github.io/serious-business/
 
 ## Contributors
 
