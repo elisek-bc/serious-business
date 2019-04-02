@@ -16,4 +16,6 @@ The goal of this exercise is to make Javascript interact with the static opening
 
 ## Struggles
 
+I only encountered one major problem. But since it was kinda my own bonus objective I've decided to not include the feature:
 
+Not showing or creating the button 'Close early' when the shop is already closed. (aka. don't showing it when the message 'our shop is currently closed' is displayed)

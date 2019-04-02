@@ -123,18 +123,11 @@
 
 /*==================================================*/
 
-        //variable open shop
-        var openText = document.getElementById("notification").innerHTML = "Our shop is currently open"
-
         //creates the button
         var btn = document.createElement('button');
         btn.innerHTML = "Close early";
+        document.getElementById("rightside").appendChild(btn);   
 
-        //if the shop is open then show the button
-        if (openText) {
-            document.getElementById("rightside").appendChild(btn);   
-        }
-        
         btn.addEventListener('click',closeEarly)
             function closeEarly(){
                 // get current date and time and display them right   
