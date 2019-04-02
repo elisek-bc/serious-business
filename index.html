@@ -51,7 +51,7 @@
             </table>
         </div>
         <div class="col-12 col-lg-4 mx-auto" id="rightside" >
-          <p id="notification">display text</p>  
+            <p id="notification">display text</p>  
         </div>
     </div>
 
@@ -93,19 +93,52 @@
                     }
                 }
 
-        //BONUS OBJECTIVES       
-        var btn = document.createElement('button');
-        btn.innerHTML = "Close early";
-        document.getElementById("rightside").appendChild(btn);
+/*================================================================*/
 
-        btn.addEventListener('click',closeEarly)
+        //BONUS OBJECTIVES
 
-        function closeEarly(){
-            
+        var clockDigital = document.createElement('div');
+            clockDigital.id = 'digitalClock';
+            clockDigital.className = 'clock';
+            document.getElementById('rightside').appendChild(clockDigital);
+        
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var session = "PM";
+    
+            if(h > 12){
+                h = h - 12;
+                session = "AM";
+            }
+    
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+    
+            var time = h + ":" + m + " " + session;
+            document.getElementById("digitalClock").innerText = time;
+            document.getElementById("digitalClock").textContent = time;
+    
+            setTimeout(showTime, 1000);    
         }
 
-                
-                           
+        window.addEventListener('load',showTime);
+
+/*==================================================*/
+
+        //creates the button
+        var btn = document.createElement('button');
+        btn.innerHTML = "Close early";
+
+        //if (document.getElementById("notification").innerHTML = "Our shop is currently open") {
+        document.getElementById("rightside").appendChild(btn);
+        //}
+
+        btn.addEventListener('click',closeEarly)
+            function closeEarly(){
+            } 
+
     </script>   
 </body>
 </html>
