@@ -19,30 +19,30 @@
     <div class="row">
         <div class="col-12 col-lg-4 mx-auto">
             <h1 class="text-center text-lg-left">Opening hours</h1>
-            <table class="table openinghours">
+            <table class="table" id="openinghours">
                 <tr>
                     <td>Monday</td>
-                    <td>1pm - 6pm</td>
+                    <td>1 pm - 6 pm</td>
                 </tr>
                 <tr>
                     <td>Tuesday</td>
-                    <td>10am - 6pm</td>
+                    <td>10 am - 6 pm</td>
                 </tr>
                 <tr>
                     <td>Wednesday</td>
-                    <td>10am - 6pm</td>
+                    <td>10 am - 6 pm</td>
                 </tr>
                 <tr>
                     <td>Thursday</td>
-                    <td>10am - 6pm</td>
+                    <td>10 am - 6 pm</td>
                 </tr>
                 <tr>
                     <td>Friday</td>
-                    <td>10am - 6pm</td>
+                    <td>10 am - 6 pm</td>
                 </tr>
                 <tr>
                     <td>Saturday</td>
-                    <td>10am - 6pm</td>
+                    <td>10 am - 6 pm</td>
                 </tr>
                 <tr>
                     <td>Sunday</td>
@@ -142,28 +142,28 @@
                         session = "pm";
                     }
 
-                h = (h < 10) ? "0" + h : h;
+            // set zero in front of minutes
                 m = (m < 10) ? "0" + m : m;
 
             // apply date and time on table
 
                     if (day == 1) { // Monday
-                        document.getElementById("openinghours").rows[0].cells[1].innerHTML = "1pm - " + h + m + session;
+                        document.getElementById("openinghours").rows[0].cells[1].innerHTML = "1 pm - " + h + ":" + m + " " + session;
                     }
                     if (day == 2) { // Tuesday
-                        document.getElementById("openinghours").rows[1].cells[1].innerHTML = "10am - " + h + m + session;
+                        document.getElementById("openinghours").rows[1].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
                     }
                     if (day == 3) { // Wednesday
-                        document.getElementById("openinghours").rows[2].cells[1].innerHTML = "10am - " + h + m + session;
+                        document.getElementById("openinghours").rows[2].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
                     }
                     if (day == 4) { // Thursday
-                        document.getElementById("openinghours").rows[3].cells[1].innerHTML = "10am - " + h + m + session;
+                        document.getElementById("openinghours").rows[3].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
                     }
                     if (day == 5) { // Friday
-                        document.getElementById("openinghours").rows[4].cells[1].innerHTML = "10am - " + h + m + session;
+                        document.getElementById("openinghours").rows[4].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
                     }
                     if (day == 6) { // Saturday
-                        document.getElementById("openinghours").rows[5].cells[1].innerHTML = "10am - " + h + m + session;
+                        document.getElementById("openinghours").rows[5].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
                     }
             }
 
