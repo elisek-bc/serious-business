@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-12 col-lg-4 mx-auto">
             <h1 class="text-center text-lg-left">Opening hours</h1>
-            <table class="table">
+            <table class="table openinghours">
                 <tr>
                     <td>Monday</td>
                     <td>1pm - 6pm</td>
@@ -60,13 +60,9 @@
                 
             function checkDayandTime(){
                 var date = new Date();
-                var day = date.getDay();
-                console.log(day); // 0=Sunday 1=Monday 2=Tuesday ...
-                    
+                var day = date.getDay();   
                 var hour = date.getHours(); // 0 = 12am, 1 = 1am, ... 18 = 6pm\
-                console.log(hour);
                 
-                console.log(document.getElementById("notification"));
                 //Check if it's Sunday
                 if (day == 0){
                     document.getElementById("notification").innerHTML = "Our shop is currently closed";
@@ -106,11 +102,11 @@
             var date = new Date();
             var h = date.getHours(); // 0 - 23
             var m = date.getMinutes(); // 0 - 59
-            var session = "PM";
+            var session = "AM";
     
             if(h > 12){
                 h = h - 12;
-                session = "AM";
+                session = "PM";
             }
     
             h = (h < 10) ? "0" + h : h;
@@ -130,14 +126,46 @@
         //creates the button
         var btn = document.createElement('button');
         btn.innerHTML = "Close early";
-
-        //if (document.getElementById("notification").innerHTML = "Our shop is currently open") {
         document.getElementById("rightside").appendChild(btn);
-        //}
 
         btn.addEventListener('click',closeEarly)
             function closeEarly(){
-            } 
+            // get current date and time and display them right   
+                var date = new Date();
+                var day = date.getDay();   
+                var h = date.getHours(); // 0 - 23
+                var m = date.getMinutes(); // 0 - 59
+                var session = "am";
+
+                    if(h > 12){
+                        h = h - 12;
+                        session = "pm";
+                    }
+
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+
+            // apply date and time on table
+
+                    if (day == 1) { // Monday
+                        document.getElementById("openinghours").rows[0].cells[1].innerHTML = "1pm - " + h + m + session;
+                    }
+                    if (day == 2) { // Tuesday
+                        document.getElementById("openinghours").rows[1].cells[1].innerHTML = "10am - " + h + m + session;
+                    }
+                    if (day == 3) { // Wednesday
+                        document.getElementById("openinghours").rows[2].cells[1].innerHTML = "10am - " + h + m + session;
+                    }
+                    if (day == 4) { // Thursday
+                        document.getElementById("openinghours").rows[3].cells[1].innerHTML = "10am - " + h + m + session;
+                    }
+                    if (day == 5) { // Friday
+                        document.getElementById("openinghours").rows[4].cells[1].innerHTML = "10am - " + h + m + session;
+                    }
+                    if (day == 6) { // Saturday
+                        document.getElementById("openinghours").rows[5].cells[1].innerHTML = "10am - " + h + m + session;
+                    }
+            }
 
     </script>   
 </body>
