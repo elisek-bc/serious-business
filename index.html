@@ -145,25 +145,29 @@
                 // set zero in front of minutes
                 m = (m < 10) ? "0" + m : m;
 
-                    // apply date and time on table
+            /*==============================================*/
 
-                    if (day == 1) { // Monday
-                        document.getElementById("openinghours").rows[0].cells[1].innerHTML = "1 pm - " + h + ":" + m + " " + session;
-                    }
-                    if (day == 2) { // Tuesday
-                        document.getElementById("openinghours").rows[1].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
-                    }
-                    if (day == 3) { // Wednesday
-                        document.getElementById("openinghours").rows[2].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
-                    }
-                    if (day == 4) { // Thursday
-                        document.getElementById("openinghours").rows[3].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
-                    }
-                    if (day == 5) { // Friday
-                        document.getElementById("openinghours").rows[4].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
-                    }
-                    if (day == 6) { // Saturday
-                        document.getElementById("openinghours").rows[5].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
+                    // Change hour in table
+
+                    switch (day) {
+                        case 1:
+                            document.getElementById("openinghours").rows[0].cells[1].innerHTML = "1 pm - " + h + ":" + m + " " + session;
+                            break;
+                        case 2:
+                            document.getElementById("openinghours").rows[1].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
+                            break;
+                        case 3:
+                            document.getElementById("openinghours").rows[2].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
+                            break;
+                        case 4:
+                            document.getElementById("openinghours").rows[3].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
+                            break;
+                        case 5:
+                            document.getElementById("openinghours").rows[4].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
+                            break;
+                        case 6:
+                            document.getElementById("openinghours").rows[5].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
+                            break;
                     }
 
             //change p title
@@ -173,6 +177,27 @@
             document.getElementById("rightside").removeChild(btn);
             }
 
+            /* apply date and time on table in another way (do not activate while line 152-171 are switch and on)
+
+                if (day == 1) { // Monday
+                    document.getElementById("openinghours").rows[0].cells[1].innerHTML = "1 pm - " + h + ":" + m + " " + session;
+                }
+                if (day == 2) { // Tuesday
+                    document.getElementById("openinghours").rows[1].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
+                }
+                if (day == 3) { // Wednesday
+                    document.getElementById("openinghours").rows[2].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
+                }
+                if (day == 4) { // Thursday
+                    document.getElementById("openinghours").rows[3].cells[1].innerHTML = "10 am - " + h + ":" + m + " " + session;
+                }
+                if (day == 5) { // Friday
+                    document.getElementById("openinghours").rows[4].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
+                }
+                if (day == 6) { // Saturday
+                    document.getElementById("openinghours").rows[5].cells[1].innerHTML = "10 am - " + h  + ":" + m + " " + session;
+                }*/
+            
     </script>   
 </body>
 </html>
